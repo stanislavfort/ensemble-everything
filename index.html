@@ -112,6 +112,12 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
+        <div class="level-set has-text-justified">
+        <p>
+          We take inspiration from the human visual system and design an approach to image recognition from the ground up that is adversarially robust <it>by default</it>, without any adversarial training. For an attacker to fool it, they have to design a convincing attack on 1) all resolutions and on 2) all abstraction scales. It turns out that if they do that, they effectively have to produce an interpretable image of the target class. Our model is aligned with the human visual representations to such an extent that it automatically becomes a generator as well as a classifier -- we can just directly hill-climb on the input image pixels towards the probability of a class to generate an interpretable image of it. Using these ideas, we can also turn pretrained classifiers and CLIP models into steerable image generators without any diffusion, additional training or GANs involved, and construct the first trasferrable image adversarial attacks on state-of-the-art vision LLMs such as the OpenAI GPT-4 and Anthropic Claude 3. 
+          
+          </p>
+     </div>
         <div class="content">
           <img src="static/images/headline.png" alt="The headline figure showing the key aspects of the multi-resolution self-ensemble" class="center-image"/>
         </div>
