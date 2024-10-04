@@ -150,6 +150,7 @@
           We experimentally demonstrate that standard adversarial attacks on a classifier only fool the very final layers of the network. In other words, a <it>dog</it> attacked to look like a <it>car</it> still has <it>dog</it>-like early and intermediate layer representations such as oriented edges, textures, and even higher level features. 
           </p>
      </div>
+      <div class="content">
      <img src="static/images/only-last-layer-attacked.png" alt="An adversarial attack on a classifier only confuses the representations at the very last layers of the neural network" class="blend-img-background center-image"/>
       </div>
     <div class="level-set has-text-justified">
@@ -157,14 +158,12 @@
         Attacks that perturb an image to confuse a particular layer are only effective for layers surrounding it. Representations from layers before and even after partially recover and see the original ground truth class instead of the attack target class.
         </p>
      </div>
-    </div>
+    <div class="content">
      <img src="static/images/layer-decorrelation.png" alt="An adversarial attack oconfusing a particular layer does not confuse the layers before and even after" class="blend-img-background center-image"/>
       </div>
    </div>
  </div>
 </section>
-
-
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
