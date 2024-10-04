@@ -144,6 +144,22 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container  is-max-desktop">
+      <h2 class="title is-3">Multi-resolution input to mimic the human eye</h2>
+      <div class="level-set has-text-justified">
+        <p>
+          Humans do not take a single static picture with their eyes and classify it. Instead, many noisy, jitter frames are effectively captured at different resolutions and a classification is performed on all of them at once. To mimic that, we train a neural network to accept a channel-wise <b>multi-resolution</b> stack of images <it>at once</it>. This automatically leads to significant adversarial robustness of the learned model, <it>provided that very low learning rate is used.</it> 
+          </p>
+     </div>
+      <div class="content">
+     <img src="static/images/multi-resolution.png" alt="A multi-resolution architecture taking a channel-wise, multi-resolution stack of images as an input" class="blend-img-background center-image"/>
+      </div>
+   </div>
+ </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container  is-max-desktop">
       <h2 class="title is-3">Standard adversarial attacks only fool the final layer</h2>
       <div class="level-set has-text-justified">
         <p>
