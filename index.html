@@ -148,7 +148,7 @@
       <h2 class="title is-3">Multi-resolution input to mimic the human eye</h2>
       <div class="level-set has-text-justified">
         <p>
-          Humans do not take a single static picture with their eyes and classify it. Instead, many noisy, jitter frames are effectively captured at different resolutions and a classification is performed on all of them at once. To mimic that, we train a neural network to accept a channel-wise <b>multi-resolution</b> stack of images <it>at once</it>. This automatically leads to significant adversarial robustness of the learned model, <it>provided that very low learning rate is used.</it> 
+          Humans do not take a single static picture with their eyes and classify it. Instead, many noisy, jittered frames are effectively captured at different resolutions and a classification is performed on all of them at once. To mimic this, we train a neural network to accept a channel-wise <b>multi-resolution</b> stack of images <it>at once</it>. This automatically leads to significant adversarial robustness of the learned model, <it>provided that very low learning rate is used.</it> 
           </p>
      </div>
       <div class="content">
@@ -167,7 +167,7 @@
       <h2 class="title is-3">Standard adversarial attacks only fool the final layer</h2>
       <div class="level-set has-text-justified">
         <p>
-          We experimentally demonstrate that standard adversarial attacks on a classifier only fool the very final layers of the network. In other words, a <it>dog</it> attacked to look like a <it>car</it> still has <it>dog</it>-like early and intermediate layer representations such as oriented edges, textures, and even higher level features. 
+          We experimentally demonstrate that standard adversarial attacks on a classifier only fool the very final layers of the network. In other words, a <it>dog</it> attacked to look like a <it>car</it> still has predominantly <it>dog</it>-like early and intermediate layer representations such as oriented edges, textures, and even higher level features. 
           </p>
      </div>
       <div class="content">
@@ -175,7 +175,7 @@
       </div>
     <div class="level-set has-text-justified">
         <p>
-        Attacks that perturb an image to confuse a particular layer are only effective for layers surrounding it. Representations from layers before and even after partially recover and see the original ground truth class instead of the attack target class.
+        Attacks that perturb an image to confuse a particular layer are mostly effective only for the layer itself and the layers surrounding it. Representations from layers before and even after partially recover and see the original ground truth class instead of the attack target class.
         </p>
      </div>
     <div class="content">
@@ -193,7 +193,7 @@
       <h2 class="title is-3">Ensembling intermediate predictions via <it>CrossMax</it> => multi-resolution self-ensemble</h2>
       <div class="level-set has-text-justified">
         <p>
-          We use the partial layer susceptibility decorrelation to construct a <it>self-ensemble</it> by ensembling the predictions of the intermediate layers. To avoid non-robust aggregation that could be dominated by a single layer or class, we propose a new ensembling algorithm called <it>CrossMax</it>.
+          We use the partial layer susceptibility decorrelation to construct a <it>self-ensemble</it> by ensembling the predictions of the intermediate layers (extracted with trained linear probes). To avoid non-robust aggregation that could be dominated by a single layer or class, we propose a new ensembling algorithm called <it>CrossMax</it>.
           </p>
      </div>
       <div class="content">
@@ -219,7 +219,7 @@
       <h2 class="title is-3">Adversarial robustness on RobustBench</h2>
       <div class="level-set has-text-justified">
         <p>
-          Our multi-resolution self-ensemble <it>without any adversarial training at all</it> reaches similar results to SOTA on the <a href="https://robustbench.github.io/">RobustBench</a> white box AutoAttack attack suite on CIFAR-10 and improves upon sota by +5% on CIFAR-100. With very light adversarial training (2x compute overhead), we surpass SOTA on CIFAR-10 by +5% and on CIFAR-100 by +9%. This is despite competing methods using 100x -- 1000x more compute for adversarial training. 
+          Our multi-resolution self-ensemble <it>without any adversarial training at all</it> reaches similar results to SOTA on the <a href="https://robustbench.github.io/">RobustBench</a> white box AutoAttack attack suite on CIFAR-10 and improves upon SOTA by +5% on CIFAR-100. With very light adversarial training (2x compute overhead), we surpass SOTA on CIFAR-10 by +5% and on CIFAR-100 by +9%. This is despite competing methods using 100x—1000x more compute for adversarial training. 
           </p>
      </div>
       <div class="content">
@@ -237,7 +237,7 @@
       <h2 class="title is-3">Gradient ascent on pixels towards class => interpretable image</h2>
       <div class="level-set has-text-justified">
         <p>
-          Our model is so robust and aligned with human-like visiual features that directly optimizing the input image to increase the probability of the target class generates interpretable images of the semantic content of the class. Normally, this would lead to uninterpretable noise. We therefore effectively unify classification and generation. Examples of 4 such generated "attacks" starting from grey pixels and maximizing the probability of a target class for our CIFAR-100 model:
+          Our model is so robust and aligned with human-like visual features that directly optimizing the input image to increase the probability of the target class generates interpretable images of the semantic content of the class. Normally, this would lead to uninterpretable noise. We therefore effectively unify classification and generation. Examples of 4 such generated "attacks" starting from grey pixels and maximizing the probability of a target class for our CIFAR-100 model:
           </p>
      </div>
       <div class="content">
@@ -255,7 +255,7 @@
       <h2 class="title is-3">If an attack succeeds, we see why</h2>
       <div class="level-set has-text-justified">
         <p>
-          Due to the robustness of our model, successful attacks end up looking very interpretable and we see why the class dicision has been changed.
+          Due to the robustness of our model, successful attacks end up looking very interpretable and we see why the class decision has been changed.
           </p>
      </div>
       <div class="content">
